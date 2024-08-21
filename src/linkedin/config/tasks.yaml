@@ -1,0 +1,147 @@
+content_generation_task:
+  description: >
+    Give me 5 themes / topics for social media for me. For reference, I am a {description_of_you}
+
+    For example my entrepreneur friend who runs an agency has
+
+    1. Personal branding
+
+    2. Copywriting
+
+    3. Entrepreneurship
+
+    4. Sales
+
+    5. LinkedIn Growth
+
+    As her content pillars as her business and brand are around that.
+
+    What would they be for me?
+
+    For a little bit more context here is their mission statement:
+
+    We build full-service marketing campaings based around a virtual event that help you dominate your space and generate leads for your business.
+    
+  expected_output: >
+    A list with 5 bullet points of the most relevant themes / topics that matches the following description of me: {description_of_you}
+  agent: content_strategist
+
+hooks_generation_task:
+  description: >
+    Based on these themes/topics you created. I want you to write me a viral LinkedIn post hook idea for each based on these hooks I've seen perform well on social media
+
+    "Stop publishing new blog content.
+    
+    I see too many websites with 100s of blog posts that get no traffic.
+
+    Yet they're still publishing 4+ new posts per month.
+
+    If you already have existing content, do this instead:"
+
+    Make sure the hooks follow the following format:
+
+    A bold statement that is no more than 8 words in sentence one.
+
+    A sentence that starts with the words "Here are" and then a number to start a step by step listicle for sentence two.
+
+    Please organize the hooks in a table (in markdown format) that is for one week's worth of content, and make sure I have exactly 5 post hooks, for Monday to Friday.
+  expected_output: >
+    A table with 5 rows and 3 columns, with days of the week in column 1, theme / topic in column 2, and the generated hook in column 3.
+    Formatted as markdown without '```'
+  agent: social_media_planner
+
+linkedin_post_generation_task:
+  description: >
+    Using these first hooks you recieved,
+
+    I want you to write me a viral LinkedIn post that is 500 characters long.
+
+    Make the sentences short and concise and no longer than 8 words per sentence.
+
+    But also switch up the formatting so it's easy to read.
+
+    Please no hashtags, and make sure the posts follow this format:
+
+    Please use the following 3 posts as examples for formatting, 
+    
+    but do not use any of the topics from these posts to create the new post I've asked you to write:
+
+    Post 1:
+
+    I've read many books, but this one changed my life:
+
+    (And it is not Rich Dad Poor Dad)
+
+    → Influence by Robert Cialdini. 
+
+    Here's how to apply his 6 principles to win LinkedIn.
+
+    1. Reciprocity: Your free content? better than their paid
+    2. Consistency: Post and engage consistently
+    3. Social Proof: Your transformation is your best asset
+    4. Authority: Master one topic, become the go-to
+    5. Liking: Share your story, make yourself relatable
+    6. Scarcity: Become your own niche, be unique.
+    
+    This book taught me more than my marketing degree.
+
+    I re-read it every 3 months. Its lessons are timeless. 
+
+    Master these principles → you'll become unstoppable.
+
+
+
+    Post 2:
+
+    5 years ago, I signed my biggest client (here's how)
+
+    It was a random morning. 
+    I'm just scrolling through Upwork.
+    When I get a job invite from Microsoft.
+
+    Then I open up my Tr... wait, Microsoft?! Really?
+
+    I'm just a random guy from Bosnia.
+    I'm a nobody in the marketing world.
+    How did I get on the radar of Microsoft?
+
+    Well, my friends, it turns out...
+
+    Spending years on a platform gets you noticed.
+    Sharing small results daily pays big long term.
+    And someone is always watching. Always.
+
+    Could be Upwork, LinkedIn, or your neighborhood park.
+
+    Show up → do good work → good things will happen
+
+    (It's really not that complicated, eh?)
+
+    P.S. Have you ever had a "Mama, I made it" moment?
+
+
+    Post 3:
+
+    How I hacked my way into the top 1%
+
+    (This simple tip changed my life)
+
+    Turn your life into a video game. 
+
+    - Choose your character 
+    - Stack high ROI skills 
+    - Collect knowledge 
+    - Build your network
+    - Learn the rules
+    - Start winning 
+    - Level up 
+
+    Build momentum through gamification.
+
+    Create a character that can win.
+
+    You will only lose if you quit.
+    
+  expected_output: >
+    5 LinkedIn posts, one per each hook / topic from the table you recieved.
+  agent: ghostwriter

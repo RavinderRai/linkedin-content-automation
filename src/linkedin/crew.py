@@ -14,32 +14,48 @@ class LinkedinCrew():
 	tasks_config = 'config/tasks.yaml'
 
 	@agent
-	def researcher(self) -> Agent:
+	def content_strategist(self) -> Agent:
 		return Agent(
-			config=self.agents_config['researcher'],
+			config=self.agents_config['content_strategist'],
 			# tools=[MyCustomTool()], # Example of custom tool, loaded on the beginning of file
 			verbose=True
 		)
 
 	@agent
-	def reporting_analyst(self) -> Agent:
+	def social_media_planner(self) -> Agent:
 		return Agent(
-			config=self.agents_config['reporting_analyst'],
+			config=self.agents_config['social_media_planner'],
+			verbose=True
+		)
+	
+	@agent
+	def ghostwriter(self) -> Agent:
+		return Agent(
+			config=self.agents_config['ghostwriter'],
 			verbose=True
 		)
 
 	@task
-	def research_task(self) -> Task:
+	def content_generation_task(self) -> Task:
 		return Task(
-			config=self.tasks_config['research_task'],
+			config=self.tasks_config['content_generation'],
+			agent=self.content_strategist()
+		)
+	
+	def hooks_generation_task(self) -> Task:
+		return Task(
+			config=self.tasks_config['hooks_generation'],
+			agent=self.social_media_planner(),
+			output="hooks.md"
+		)
+	
+	def linkedin_post_generation_task(self) -> Task:
+		return Task(
+			config=self.tasks_config['linkedin_post_generation'],
+			agent=self.ghostwriter(),
+			output="linkedin_posts.md"
 		)
 
-	@task
-	def reporting_task(self) -> Task:
-		return Task(
-			config=self.tasks_config['reporting_task'],
-			output_file='report.md'
-		)
 
 	@crew
 	def crew(self) -> Crew:

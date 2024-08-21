@@ -1,4 +1,4 @@
-content_generation_task:
+content_generation:
   description: >
     Give me 5 themes / topics for social media for me. For reference, I am a {description_of_you}
 
@@ -26,7 +26,7 @@ content_generation_task:
     A list with 5 bullet points of the most relevant themes / topics that matches the following description of me: {description_of_you}
   agent: content_strategist
 
-hooks_generation_task:
+hooks_generation:
   description: >
     Based on these themes/topics you created. I want you to write me a viral LinkedIn post hook idea for each based on these hooks I've seen perform well on social media
 
@@ -50,7 +50,7 @@ hooks_generation_task:
     Formatted as markdown without '```'
   agent: social_media_planner
 
-linkedin_post_generation_task:
+linkedin_post_generation:
   description: >
     Using these first hooks you recieved,
 

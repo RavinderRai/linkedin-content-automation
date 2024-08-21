@@ -2,7 +2,7 @@ from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 
 # Uncomment the following line to use an example of a custom tool
-# from linkedin.tools.custom_tool import MyCustomTool
+from linkedin.tools.custom_tool import MyCustomTool
 
 # Check our tools documentations for more information on how to use them
 # from crewai_tools import SerperDevTool
@@ -17,7 +17,7 @@ class LinkedinCrew():
 	def content_strategist(self) -> Agent:
 		return Agent(
 			config=self.agents_config['content_strategist'],
-			# tools=[MyCustomTool()], # Example of custom tool, loaded on the beginning of file
+			#tools=[MyCustomTool()], # Example of custom tool, loaded on the beginning of file
 			verbose=True
 		)
 
@@ -42,18 +42,20 @@ class LinkedinCrew():
 			agent=self.content_strategist()
 		)
 	
+	@task
 	def hooks_generation_task(self) -> Task:
 		return Task(
 			config=self.tasks_config['hooks_generation'],
 			agent=self.social_media_planner(),
-			output="hooks.md"
+			output_file="hooks.md"
 		)
 	
+	@task
 	def linkedin_post_generation_task(self) -> Task:
 		return Task(
 			config=self.tasks_config['linkedin_post_generation'],
 			agent=self.ghostwriter(),
-			output="linkedin_posts.md"
+			output_file="linkedin_posts.md"
 		)
 
 

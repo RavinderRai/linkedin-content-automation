@@ -23,8 +23,7 @@ content_generation:
     We build full-service marketing campaings based around a virtual event that help you dominate your space and generate leads for your business.
     
   expected_output: >
-    A list with 5 bullet points of the most relevant themes / topics that matches the following description of me: {description_of_you}
-  agent: content_strategist
+    A list with 5 bullet points of the most relevant themes / topics that matches the given description.
 
 hooks_generation:
   description: >
@@ -48,7 +47,7 @@ hooks_generation:
   expected_output: >
     A table with 5 rows and 3 columns, with days of the week in column 1, theme / topic in column 2, and the generated hook in column 3.
     Formatted as markdown without '```'
-  agent: social_media_planner
+
 
 linkedin_post_generation:
   description: >
@@ -144,4 +143,4 @@ linkedin_post_generation:
     
   expected_output: >
     5 LinkedIn posts, one per each hook / topic from the table you recieved.
-  agent: ghostwriter
+

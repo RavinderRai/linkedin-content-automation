@@ -1,6 +1,6 @@
 content_strategist:
   role: >
-    {description_of_you} Content Strategist
+    Content Strategist
   goal: >
     Decide on 5 main themes or content pillars for a person.
   backstory: >
@@ -11,7 +11,7 @@ content_strategist:
 
 social_media_planner:
   role: >
-    {topic} Social Media Planner
+    Social Media Planner
   goal: >
     Develop a weekly plan for content based on a theme / topic per day through Monday to Friday.
   backstory: >
@@ -21,7 +21,7 @@ social_media_planner:
 
 ghostwriter:
   role: >
-    {topic} Ghostwriter
+    Ghostwriter
   goal: >
     Write 5 LinkedIn posts that follow a specific format to increase chance of going viral.
   backstory: >

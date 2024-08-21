@@ -1,6 +1,11 @@
 # Linkedin Crew
 
-Welcome to the Linkedin Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+Welcome to the Linkedin Crew project, powered by [crewAI](https://crewai.com). This project automates the process of generating LinkedIn content, and follows Lara Acosta's strategy that you can find in this video: https://www.youtube.com/watch?v=wYBObTusysQ. So you can either follow the advice in her video, which may be a bit tedious, or just run this program and generate the content yourself, with nothing more than a description of yourself/personal brand. Thus, in a way, this project allows you to create an AI Lara Acosta who will write viral LinkedIn content based on her own advice.
+
+The way it works is it uses 3 different AI agents to perform 3 different tasks. It sequentially runs through this process and ends with markdown files containing your viral LinkedIn posts that you can then edit yourself. See the image below for a graphical representation. Also, to make this even better, try cloning this repo and changing the prompts yourself - there are some example posts (for few-shot learning) that could be improved by catering to your niche.
+
+<img src="LinkedInAutomationImage.png" alt="AI Agents Framework" width="600">
+
 
 ## Installation
 
